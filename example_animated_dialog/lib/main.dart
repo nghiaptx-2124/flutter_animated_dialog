@@ -48,7 +48,7 @@ class MyHomePage extends StatefulWidget {
 
   final VoidCallback onSetting;
 
-  MyHomePage({Key key, this.title, this.onSetting}) : super(key: key);
+  MyHomePage({Key? key, required this.title, required this.onSetting}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -59,17 +59,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // Whether the green box should be visible or invisible
 
-  String selectedIndexText;
+  String selectedIndexText = "";
 
-  int selectIdx;
+  int selectIdx = 0;
 
-  String singleSelectedIndexText;
+  String singleSelectedIndexText = "";
 
-  int selectIndex;
+  int selectIndex = 0;
 
-  String multiSelectedIndexesText;
+  String multiSelectedIndexesText = "";
 
-  List<int> selectedIndexes;
+  List<int> selectedIndexes = [];
 
   @override
   Widget build(BuildContext context) {
