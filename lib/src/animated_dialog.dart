@@ -75,7 +75,8 @@ Future<T?> showAnimatedDialog<T>({
   Curve curve = Curves.linear,
   Duration? duration,
   Alignment alignment = Alignment.center,
-  Axis? axis,
+  Axis? axis = Axis.horizontal,
+  Color? barrierColor,
 }) {
   assert(builder != null);
   assert(debugCheckHasMaterialLocalizations(context));
@@ -97,7 +98,7 @@ Future<T?> showAnimatedDialog<T>({
     },
     barrierDismissible: barrierDismissible,
     barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
-    barrierColor: Colors.black54,
+    barrierColor: barrierColor ?? Colors.black54,
     transitionDuration: duration ?? const Duration(milliseconds: 400),
     transitionBuilder: (BuildContext context, Animation<double> animation,
         Animation<double> secondaryAnimation, Widget child) {
